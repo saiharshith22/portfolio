@@ -152,3 +152,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.education-list li {
+  margin-bottom: 3px;
+}
