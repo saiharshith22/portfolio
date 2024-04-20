@@ -2,26 +2,22 @@ import {
   AppBar,
   Box,
   Button,
-  Divider,
   Drawer,
   IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
   Toolbar,
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import DrawerSideBar from "./DrawerSideBar";
+import { Context } from "../App";
 
 const Header = () => {
+  const context = useContext(Context);
+  const { mobileOpen, setMobileOpen, activeLink, setActiveLink } = context;
+
   const drawerWidth = 240;
   const navItems = ["Home", "About", "Experience", "Projects", "Contact"];
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("");
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -29,56 +25,16 @@ const Header = () => {
 
   const handleActiveLink = (link) => {
     setActiveLink(link);
+    const section = document.getElementById(`${link}-section`);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
-
-  const drawer = (
-    <Box className="bg-pfDark h-full">
-      <IconButton
-        color="inherit"
-        aria-label="close drawer"
-        onClick={handleDrawerToggle}
-        sx={{ display: { sm: "none" } }}
-        className="w-full rounded-none flex justify-end p-3"
-      >
-        <CloseIcon sx={{ color: "white" }} />
-      </IconButton>
-      <List className="text-white flex flex-col items-center gap-[15px]">
-        {navItems.map((item) => (
-          <ListItem
-            key={item}
-            disablePadding
-            className={`border-solid border-white border-b-${
-              item.toLowerCase() === activeLink ? "2" : "0"
-            } border-l-0 border-r-0 border-t-0 py-2 w-[80%]`}
-          >
-            <ListItemButton sx={{ textAlign: "center" }} className={``}>
-              <Link
-                onClick={() => handleActiveLink(item.toLowerCase())}
-                to={"/" + item.toLowerCase()}
-                className={`text-[20px] w-full no-underline text-white `}
-                // style={{
-                //   color: "white",
-                //   textDecoration: "none",
-                //   borderBottom: "2px solid red",
-                // }}
-              >
-                {console.log(
-                  "item.toLowerCase() === activeLink",
-                  item.toLowerCase() === activeLink
-                )}
-                {item}
-              </Link>
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
 
   return (
     <Box>
-      <AppBar component="nav" className="bg-pfBg">
-        <Toolbar>
+      <AppBar component="nav" className="bg-pfDark" elevation={0}>
+        <Toolbar className="sm:px-[50px]">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -94,26 +50,36 @@ const Header = () => {
             sx={{ flexGrow: 1 }}
             className="tracking-widest text-2xl ibmSansBold flex justify-end sm:block"
           >
-            SH
+            SH.
           </Typography>
 
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box className="hidden sm:flex sm:justify-center sm:items-center">
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <Button
+                key={item}
+                sx={{ color: "#fff" }}
+                className={`${
+                  item.toLowerCase() === activeLink
+                    ? "text-pfPrimary text-[16px] ibmSansBold"
+                    : "text-white text-[16px] ibmSansSemiBold"
+                }  normal-case h-fit min-h-fit min-w-fit px-3 py-0`}
+                onClick={() => handleActiveLink(item.toLowerCase())}
+              >
                 {item}
               </Button>
             ))}
           </Box>
         </Toolbar>
       </AppBar>
+
+      {/* --- mobile drawer --- */}
       <nav>
         <Drawer
-          //   container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
@@ -123,7 +89,12 @@ const Header = () => {
             },
           }}
         >
-          {drawer}
+          <DrawerSideBar
+            navItems={navItems}
+            handleDrawerToggle={handleDrawerToggle}
+            handleActiveLink={handleActiveLink}
+            activeLink={activeLink}
+          />
         </Drawer>
       </nav>
     </Box>

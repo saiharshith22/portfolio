@@ -1,0 +1,31 @@
+
+              <motion.div
+                sx={{
+                  textShadow:
+                    "1px 0 #af2676, -1px 0 #af2676, 0 1px #af2676, 0 -1px #af2676, 1px 1px #af2676, -1px -1px #af2676, 1px -1px #af2676, -1px 1px #af2676",
+                }}
+                initial="hidden"
+                animate="visible"
+                transition={{ staggerChildren: 0.1 }}
+              >
+                {"SAI ".split("").map((char) => (
+                  <motion.span
+                    className="inline-block text-pfBg ibmSansBold text-[30px] md:text-[35px] lg:text-[45px] tracking-wider"
+                    variants={defaultAnimations}
+                    key={char} // Add a unique key for each character
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+                <span className="inline-block"> </span>{" "}
+                {/* Add an empty span for the space */}
+                {"HARSHITH...".split("").map((char) => (
+                  <motion.span
+                    className="inline-block text-pfBg ibmSansBold text-[30px] md:text-[35px] lg:text-[45px] tracking-wider"
+                    variants={defaultAnimations}
+                    key={char} // Add a unique key for each character
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.div>

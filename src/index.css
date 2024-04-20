@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* background-color: #100e24; */
 }
 
 @font-face {
@@ -79,7 +80,16 @@
   font-family: "IBM Plex Sans Bold Italic";
   src: url("./fonts/IBMPlexSans-BoldItalic.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Allison Regular";
+  src: url("./fonts/Allison-Regular.ttf") format("truetype");
+}
 /* styles.css */
+
+.allisonRegular {
+  font-family: "Allison Regular";
+}
 
 .ibmSansThin {
   font-family: "IBM Plex Sans Thin";
@@ -135,4 +145,10 @@
 
 .ibmSansBoldItalic {
   font-family: "IBM Plex Sans Bold Italic";
+}
+
+.textGradient {
+  background: linear-gradient(270.16deg, #441b45 5.74%, #af2676 92.05%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
