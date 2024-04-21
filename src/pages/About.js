@@ -8,7 +8,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 const About = () => {
   return (
     <Box
-      className="px-[16px] sm:px-[50px] bg-pfDark pt-[15px] min-h-screen"
+      className="px-[16px] sm:px-[50px] bg-pfDark pt-[15px] min-h-screen pb-5"
       id="about-section"
     >
       <Toolbar />
@@ -98,6 +98,14 @@ const About = () => {
             <div className="text-pfPrimary ibmSansBold">
               {"</ certification >"}
             </div>
+          </Box>
+          <Box className="mt-3">
+            <Typography className="ibmSansSemiBold text-pfPrimary text-[16px]">
+              Other tools/methodologies:
+            </Typography>
+            <Typography className="text-[16px]">
+              Mui v5, Tailwind css, NextUI, Bootstrap, Git, Agile
+            </Typography>
           </Box>
           <Box className="mt-3">
             <PiTagChevronFill
