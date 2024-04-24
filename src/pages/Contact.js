@@ -17,8 +17,15 @@ const Contact = () => {
           Lets Connect !!
         </span>
       </Typography>
-      <Grid container className=" text-white min-h-[70vh] gap-4">
-        <Grid item>
+      <Grid container className=" text-white min-h-[70vh]">
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          md={5}
+          lg={6}
+          className="pt-0 sm:pt-5 md:pt-0 md:flex md:justify-center md:items-center"
+        >
           <Box className="flex items-center">
             <img
               src={ContactBanner}
@@ -27,12 +34,7 @@ const Contact = () => {
             />
           </Box>
         </Grid>
-        <Grid
-          xs={12}
-          item
-          className="h-full mb-5"
-          sx={{ border: "1px solid red" }}
-        >
+        <Grid item xs={12} sm={8} md={7} lg={6} className="h-full mb-5">
           <ContactForm />
         </Grid>
       </Grid>
