@@ -7,7 +7,7 @@ import {
   TimelineContent,
   TimelineDot,
 } from "@mui/lab";
-import { Typography, Box, Grid, Toolbar } from "@mui/material";
+import { Typography, Box, Toolbar } from "@mui/material";
 import { PiTagChevronFill } from "react-icons/pi";
 
 const Experience = () => {

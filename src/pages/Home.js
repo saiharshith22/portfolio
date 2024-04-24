@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
-import HomeBanner from "../images/home-banner.svg";
+import HomeBanner from "../images/about-banner.png";
 import { TbDownload } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
 import { highlight } from "../components/utils";

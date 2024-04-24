@@ -5,6 +5,7 @@ import { createContext, useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import About from "./pages/About";
 import Experience from "./pages/Experience";
+import Contact from "./pages/Contact";
 
 export const Context = createContext();
 function App() {
@@ -74,6 +75,7 @@ function App() {
         <Home />
         <About />
         <Experience />
+        <Contact />
         {/* </Routes> */}
       </Box>
       {/* </BrowserRouter> */}
