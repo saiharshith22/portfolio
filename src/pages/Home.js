@@ -5,19 +5,34 @@ import { TbDownload } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
 import { highlight } from "../components/utils";
 import TextSlide from "../components/TextSlide";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Home = () => {
-  // const defaultAnimations = {
-  //   hidden: {
-  //     opacity: 0,
-  //     // y: 30,
-  //   },
-  //   visible: {
-  //     opacity: 1,
-  //     // y: 0,
-  //   },
-  // };
+  const splitWord = (word) =>
+    word.split("").map((char, i) => (
+      <motion.div
+        key={i}
+        className="text-pfBg ibmSansBold text-[30px] md:text-[35px] xl:text-[55px] tracking-wider mr-[1px]
+      "
+        style={{
+          cursor: "pointer",
+          width: "fit-content",
+          textShadow:
+            "1px 0 #af2676, -1px 0 #af2676, 0 1px #af2676, 0 -1px #af2676, 1px 1px #af2676, -1px -1px #af2676, 1px -1px #af2676, -1px 1px #af2676",
+        }}
+        whileHover={{
+          color: "#af2676",
+          textShadow: "none",
+          scaleY: 1.2,
+          y: -5,
+          display: "inline-block",
+          origin: 0,
+        }}
+      >
+        {char}
+      </motion.div>
+    ));
+
   const handleDownloadResume = async () => {
     try {
       const pdfPath = "/files/Sai_Harshith_Resume.pdf";
@@ -32,10 +47,7 @@ const Home = () => {
       console.error(error);
     }
   };
-  // const handleDownloadResume = () => {
-  //   const pdfPath = "/files/Sai_Harshith_Resume.pdf";
-  //   window.open(pdfPath, "_blank");
-  // };
+
   return (
     <Box
       className="px-[16px] sm:px-[50px] bg-pfBg pt-[15px] min-h-screen"
@@ -62,7 +74,7 @@ const Home = () => {
               MY NAME IS
             </Typography>
           </TextSlide>
-          <TextSlide>
+          {/* <TextSlide>
             <Typography
               className="text-pfBg ibmSansBold text-[30px] md:text-[35px] xl:text-[55px] tracking-wider
             "
@@ -73,6 +85,11 @@ const Home = () => {
             >
               SAI HARSHITH...
             </Typography>
+          </TextSlide> */}
+          <TextSlide>
+            <Box className="flex">
+              {splitWord("SAI")}&nbsp;&nbsp; {splitWord("HARSHITH...")}
+            </Box>
           </TextSlide>
           <TextSlide>
             <Typography className="text-[18px] md:text-[25px] xl:text-[35px] ibmSansSemiBold">

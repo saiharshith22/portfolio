@@ -5,8 +5,31 @@ import { highlight } from "../components/utils";
 import { PiTagChevronFill } from "react-icons/pi";
 import { FaLocationArrow } from "react-icons/fa6";
 import TextSlide from "../components/TextSlide";
+import { motion } from "framer-motion";
 
 const About = () => {
+  const skills = [
+    "ReactJS",
+    "NodeJS",
+    "MongoDB",
+    "ExpressJS",
+    "Javascript",
+    "HTML5, CSS3",
+  ];
+  const education = [
+    "Graduation: B.Tech",
+    "Institute: G.R.I.E.T",
+    "Specialization: ECE",
+    "CGPA: 9.04",
+    "Location: Hyderabad",
+    "Batch: 2016-2020",
+  ];
+  const handleContactMe = () => {
+    const section = document.getElementById(`contact-section`);
+    if (section) {
+      section.scrollIntoView();
+    }
+  };
   return (
     <Box
       className="px-[16px] sm:px-[50px] bg-pfDark pt-[15px] min-h-screen pb-5"
@@ -42,25 +65,24 @@ const About = () => {
           </Box>
         </Grid>
         <Grid item xs={12} sm={7} md={8} className="sm:pl-3">
-          <Typography className="pb-2 sm:py-3 text-[16px] md:text-[18px] lg:text-[20px]">
-            My name is{" "}
-            <span className="text-pfPrimary ibmSansSemiBold">
-              Saty Siva Sai Harshith Jyothula
-            </span>
-            , and I'm a passionate web developer with a knack for crafting
-            innovative and user-friendly web experiences.
-          </Typography>
+          <TextSlide>
+            <Typography className="pb-2 sm:py-3 text-[16px] md:text-[18px] lg:text-[20px]">
+              My name is{" "}
+              <span className="text-pfPrimary ibmSansSemiBold">
+                Saty Siva Sai Harshith Jyothula
+              </span>
+              , and I'm a passionate web developer with a knack for crafting
+              innovative and user-friendly web experiences.
+            </Typography>
+          </TextSlide>
           <Box className="pb-2 sm:py-3 text-[16px] md:text-[18px] lg:text-[20px] flex gap-3 sm:gap-2 md:gap-4 lg:gap-10">
             <Box>
               <div className="text-pfPrimary ibmSansBold">{"< skills >"}</div>
-              <ul className="pl-[25px] education-list">
-                <li>ReactJS</li>
-                <li>NodeJS</li>
-                <li>MongoDB</li>
-                <li>ExpressJS</li>
-                <li>Javascript</li>
-                <li>HTML5, CSS3</li>
-              </ul>
+              <motion.ul className="pl-[25px] education-list">
+                {skills.map((skill, i) => {
+                  return <li key={i}>{skill}</li>;
+                })}
+              </motion.ul>
               <div className="text-pfPrimary ibmSansBold">{"</ skills >"}</div>
             </Box>
             <Box>
@@ -68,12 +90,9 @@ const About = () => {
                 {"< education >"}
               </div>
               <ul className="pl-[25px] education-list">
-                <li>Graduation: B.Tech</li>
-                <li>Institute: G.R.I.E.T</li>
-                <li>Specialization: ECE</li>
-                <li>CGPA: 9.04</li>
-                <li>Location: Hyderabad</li>
-                <li>Batch: 2016-2020</li>
+                {education.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
               <div className="text-pfPrimary ibmSansBold">
                 {"</ edcation >"}
@@ -110,24 +129,28 @@ const About = () => {
               Mui v5, Tailwind css, NextUI, Bootstrap, Git, Agile
             </Typography>
           </Box>
-          <Box className="mt-3">
-            <PiTagChevronFill
-              size={"18px"}
-              className="mr-2 pt-[3px] text-pfPrimary"
-            />
-            Passionate about building innovative web products with React,
-            Next.js, and Node.js. Always learning, and next on the horizon: Java
-            with Spring.
-          </Box>
-          <Box className="mt-3">
-            <PiTagChevronFill
-              size={"18px"}
-              className="mr-2 pt-[3px] text-pfPrimary"
-            />
-            If you're looking for a skilled and enthusiastic developer who
-            thrives on challenges, feel free to reach out and let's discuss how
-            we can collaborate on your next project!
-          </Box>
+          <TextSlide>
+            <Box className="mt-3">
+              <PiTagChevronFill
+                size={"18px"}
+                className="mr-2 pt-[3px] text-pfPrimary"
+              />
+              Passionate about building innovative web products with React,
+              Next.js, and Node.js. Always learning, and next on the horizon:
+              Java with Spring.
+            </Box>
+          </TextSlide>
+          <TextSlide>
+            <Box className="mt-3">
+              <PiTagChevronFill
+                size={"18px"}
+                className="mr-2 pt-[3px] text-pfPrimary"
+              />
+              If you're looking for a skilled and enthusiastic developer who
+              thrives on challenges, feel free to reach out and let's discuss
+              how we can collaborate on your next project!
+            </Box>
+          </TextSlide>
           <Button
             className="text-white normal-case mt-4 px-3 xl:px-6 rounded-none text-[14px] sm:text-[16px] md:text-[18px] xl:text-[22px]"
             sx={{
@@ -135,6 +158,7 @@ const About = () => {
                 "linear-gradient(90deg, #af2676 0%, #441b45 100%), #ffffff",
             }}
             endIcon={<FaLocationArrow />}
+            onClick={handleContactMe}
           >
             Contact Me
           </Button>
