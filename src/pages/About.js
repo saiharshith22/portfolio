@@ -4,6 +4,7 @@ import AboutBanner from "../images/home-banner-main-flip.png";
 import { highlight } from "../components/utils";
 import { PiTagChevronFill } from "react-icons/pi";
 import { FaLocationArrow } from "react-icons/fa6";
+import TextSlide from "../components/TextSlide";
 
 const About = () => {
   return (
@@ -18,10 +19,12 @@ const About = () => {
           Nice to meet you !!
         </span>
       </Typography>
-      <Box className="text-white text-[22px] md:text-[28px] ibmSansSemiBold tracking-wider">
-        LET ME <span className="ibmSansBold textGradient">INTRODUCE</span>{" "}
-        MYSELF
-      </Box>
+      <TextSlide>
+        <Box className="text-white text-[22px] md:text-[28px] ibmSansSemiBold tracking-wider">
+          LET ME <span className="ibmSansBold textGradient">INTRODUCE</span>{" "}
+          MYSELF
+        </Box>
+      </TextSlide>
       <Grid container className=" text-white min-h-[70vh]">
         <Grid
           item

@@ -6,6 +6,7 @@ import { Box } from "@mui/material";
 import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
 
 export const Context = createContext();
 function App() {
@@ -75,6 +76,7 @@ function App() {
         <Home />
         <About />
         <Experience />
+        <Projects />
         <Contact />
         {/* </Routes> */}
       </Box>

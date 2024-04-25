@@ -5,8 +5,10 @@ module.exports = {
     extend: {
       colors: {
         pfPrimary: "#af2676",
+        pfPrimaryTransparent: "#af267650",
         pfSecondary: "#441b45",
         pfBg: "#100e24",
+        pfBgTransparent: "#100e2480",
         pfDark: "#0d0b1c",
       },
     },

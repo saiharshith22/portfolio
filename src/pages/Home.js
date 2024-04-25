@@ -4,6 +4,7 @@ import HomeBanner from "../images/about-banner.png";
 import { TbDownload } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
 import { highlight } from "../components/utils";
+import TextSlide from "../components/TextSlide";
 // import { motion } from "framer-motion";
 
 const Home = () => {
@@ -56,23 +57,29 @@ const Home = () => {
               Hello !!
             </span>
           </Typography>
-          <Typography className="text-[25px] md:text-[30px] xl:text-[50px] ibmSansBold flex items-center gap-[10px]">
-            MY NAME IS
-          </Typography>
-          <Typography
-            className="text-pfBg ibmSansBold text-[30px] md:text-[35px] xl:text-[55px] tracking-wider
+          <TextSlide>
+            <Typography className="text-[25px] md:text-[30px] xl:text-[50px] ibmSansBold flex items-center gap-[10px]">
+              MY NAME IS
+            </Typography>
+          </TextSlide>
+          <TextSlide>
+            <Typography
+              className="text-pfBg ibmSansBold text-[30px] md:text-[35px] xl:text-[55px] tracking-wider
             "
-            sx={{
-              textShadow:
-                "1px 0 #af2676, -1px 0 #af2676, 0 1px #af2676, 0 -1px #af2676, 1px 1px #af2676, -1px -1px #af2676, 1px -1px #af2676, -1px 1px #af2676",
-            }}
-          >
-            SAI HARSHITH...
-          </Typography>
-          <Typography className="text-[18px] md:text-[25px] xl:text-[35px] ibmSansSemiBold">
-            Fullstack Developer <span className="ibmSansLight">based in</span>{" "}
-            INDIA
-          </Typography>
+              sx={{
+                textShadow:
+                  "1px 0 #af2676, -1px 0 #af2676, 0 1px #af2676, 0 -1px #af2676, 1px 1px #af2676, -1px -1px #af2676, 1px -1px #af2676, -1px 1px #af2676",
+              }}
+            >
+              SAI HARSHITH...
+            </Typography>
+          </TextSlide>
+          <TextSlide>
+            <Typography className="text-[18px] md:text-[25px] xl:text-[35px] ibmSansSemiBold">
+              Fullstack Developer <span className="ibmSansLight">based in</span>{" "}
+              INDIA
+            </Typography>
+          </TextSlide>
           <Button
             className="text-white normal-case mt-4 px-3 xl:px-6 rounded-none text-[14px] sm:text-[16px] md:text-[18px] xl:text-[22px]"
             sx={{

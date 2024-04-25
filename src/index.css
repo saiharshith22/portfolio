@@ -155,3 +155,7 @@
 .education-list li {
   margin-bottom: 3px;
 }
+
+.bgGradient {
+  background: linear-gradient(90deg, #af2676 0%, #441b45 100%), #ffffff;
+}

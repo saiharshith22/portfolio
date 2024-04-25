@@ -9,6 +9,7 @@ import {
 } from "@mui/lab";
 import { Typography, Box, Toolbar } from "@mui/material";
 import { PiTagChevronFill } from "react-icons/pi";
+import TextSlide from "../components/TextSlide";
 
 const Experience = () => {
   const experiences = [
@@ -44,9 +45,11 @@ const Experience = () => {
       id="experience-section"
     >
       <Toolbar />
-      <Typography className="mb-4 w-fit textGradient tracking-wide text-[26px] md:text-[30px] ibmSansBold pr-3 rounded-lg">
-        EXPERIENCE
-      </Typography>
+      <TextSlide>
+        <Typography className="mb-4 w-fit textGradient tracking-wide text-[26px] md:text-[30px] ibmSansBold pr-3 rounded-lg">
+          EXPERIENCE
+        </Typography>
+      </TextSlide>
       <Box className=" text-white min-h-[70vh] flex justify-center">
         <Timeline position="right">
           {experiences.map((exp) => (
@@ -56,25 +59,35 @@ const Experience = () => {
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <Typography className="mb-2 text-pfPrimary ibmSansBold  text-[18px] sm:text-[20px] lg:text-[22px] xl:text-[24px]">
-                  {exp.duration}
-                </Typography>
-                <Typography className="mb-1 flex items-center text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">
-                  <PiTagChevronFill
-                    size={"18px"}
-                    className="mr-2 pt-[3px] text-pfPrimary"
-                  />
-                  {exp.company}
-                </Typography>
-                <Typography className="mb-1 text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">
-                  Title : {exp.title}
-                </Typography>
-                <Typography className="mb-1 text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">
-                  Role : {exp.technology}
-                </Typography>
-                <Typography className=" text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">
-                  Domain: {exp.domain}
-                </Typography>
+                <TextSlide>
+                  <Typography className="mb-2 text-pfPrimary ibmSansBold  text-[18px] sm:text-[20px] lg:text-[22px] xl:text-[24px]">
+                    {exp.duration}
+                  </Typography>
+                </TextSlide>
+                <TextSlide>
+                  <Typography className="mb-1 flex items-center text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">
+                    <PiTagChevronFill
+                      size={"18px"}
+                      className="mr-2 pt-[3px] text-pfPrimary"
+                    />
+                    {exp.company}
+                  </Typography>
+                </TextSlide>
+                <TextSlide>
+                  <Typography className="mb-1 text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">
+                    Title : {exp.title}
+                  </Typography>
+                </TextSlide>
+                <TextSlide>
+                  <Typography className="mb-1 text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">
+                    Role : {exp.technology}
+                  </Typography>
+                </TextSlide>
+                <TextSlide>
+                  <Typography className=" text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">
+                    Domain: {exp.domain}
+                  </Typography>
+                </TextSlide>
               </TimelineContent>
             </TimelineItem>
           ))}
