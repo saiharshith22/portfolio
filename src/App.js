@@ -8,6 +8,7 @@ import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import ReactGA from "react-ga4";
+import Footer from "./components/Footer";
 
 export const Context = createContext();
 function App() {
@@ -87,6 +88,7 @@ function App() {
         <Experience />
         <Projects />
         <Contact />
+        <Footer />
         {/* </Routes> */}
       </Box>
       {/* </BrowserRouter> */}

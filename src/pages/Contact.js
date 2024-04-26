@@ -2,6 +2,7 @@ import { Box, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { highlight } from "../components/utils";
 import ContactForm from "../components/ContactForm";
+import Socials from "../components/Socials";
 
 const Contact = () => {
   return (
@@ -12,9 +13,10 @@ const Contact = () => {
       <Toolbar />
       <Typography className="flex items-center gap-[10px] text-white">
         {highlight()}
-        <span className="text-[35px] md:text-[40px] xl:text-[50px] allisonRegular font-bold">
+        <span className="text-[35px] md:text-[40px] xl:text-[50px] allisonRegular font-bold mr-5">
           Lets Connect !!
         </span>
+        <Socials />
       </Typography>
       <Grid container className=" text-white min-h-[70vh]">
         <Grid
