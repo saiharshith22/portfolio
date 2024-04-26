@@ -1,6 +1,5 @@
 import { Box, Button, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
-import AboutBanner from "../images/home-banner-main-flip.png";
 import { highlight } from "../components/utils";
 import { PiTagChevronFill } from "react-icons/pi";
 import { FaLocationArrow } from "react-icons/fa6";
@@ -58,7 +57,7 @@ const About = () => {
         >
           <Box className="flex pt-2 pr-2">
             <img
-              src={AboutBanner}
+              src="/static/images/home-banner-main-flip.png"
               alt="home banner"
               className="w-full h-full max-w-[500px] max-h-[500px]"
             />

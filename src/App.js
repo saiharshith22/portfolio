@@ -7,9 +7,18 @@ import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
+import ReactGA from "react-ga4";
 
 export const Context = createContext();
 function App() {
+  useEffect(() => {
+    // Initialize GA4 with your Measurement ID
+    ReactGA.initialize("G-JZCMQXMPTN");
+
+    // Track initial page view
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  }, []);
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
 

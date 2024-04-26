@@ -3,7 +3,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 const TextSlide = ({ children, width = "fit-content" }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: "-30px" });
   const mainControls = useAnimation();
   const slideControls = useAnimation();
 

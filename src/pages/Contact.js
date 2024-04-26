@@ -1,6 +1,5 @@
 import { Box, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
-import ContactBanner from "../images/contact-banner.png";
 import { highlight } from "../components/utils";
 import ContactForm from "../components/ContactForm";
 
@@ -28,7 +27,7 @@ const Contact = () => {
         >
           <Box className="flex items-center">
             <img
-              src={ContactBanner}
+              src="/static/images/contact-banner.png"
               alt="contact banner"
               className="w-full h-full max-w-[400px] max-h-[400px]"
             />

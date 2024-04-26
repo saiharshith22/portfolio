@@ -1,7 +1,6 @@
 import { Box, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import Project from "../components/Project";
-import Ecommerce from "../images/ecommerce.jpeg";
 import TextSlide from "../components/TextSlide";
 
 const Projects = () => {
@@ -12,7 +11,7 @@ const Projects = () => {
       teckStack: "ReactJS, NodeJS, MongoDB, Tailwind CSS",
       description:
         "An e-commerce platform built using ReactJS for the frontend, NodeJS for the backend, and MongoDB for the database. The UI is designed using Tailwind CSS for styling.",
-      imgUrl: Ecommerce,
+      imgUrl: "/static/images/ecommerce.jpeg",
       websiteLink: "website link",
     },
     {
@@ -21,7 +20,7 @@ const Projects = () => {
       teckStack: "ReactJS, NodeJS, MongoDB, Redux, Tailwind CSS",
       description:
         "A task management application developed using ReactJS for the frontend, NodeJS for the backend, MongoDB for the database, and Redux for state management. The UI is styled with Tailwind CSS.",
-      imgUrl: Ecommerce,
+      imgUrl: "/static/images/ecommerce.jpeg",
       websiteLink: "website link",
     },
     {
@@ -30,7 +29,7 @@ const Projects = () => {
       teckStack: "ReactJS, NodeJS, MongoDB, Redux, Tailwind CSS",
       description:
         "A note-taking application built with ReactJS for the frontend, NodeJS for the backend, MongoDB for the database, and Redux for state management. The UI is styled using Tailwind CSS.",
-      imgUrl: Ecommerce,
+      imgUrl: "/static/images/ecommerce.jpeg",
       websiteLink: "website link",
     },
     {
@@ -39,7 +38,7 @@ const Projects = () => {
       teckStack: "ReactJS, NodeJS, MongoDB, Redux, Tailwind CSS",
       description:
         "A social media dashboard created using ReactJS for the frontend, NodeJS for the backend, MongoDB for the database, and Redux for state management. The UI is styled with Tailwind CSS.",
-      imgUrl: Ecommerce,
+      imgUrl: "/static/images/ecommerce.jpeg",
       websiteLink: "website link",
     },
     {
@@ -48,7 +47,7 @@ const Projects = () => {
       teckStack: "ReactJS, NodeJS, MongoDB, Tailwind CSS",
       description:
         "A weather application developed using ReactJS for the frontend, NodeJS for the backend, and MongoDB for storing data. The UI is designed using Tailwind CSS for styling.",
-      imgUrl: Ecommerce,
+      imgUrl: "/static/images/ecommerce.jpeg",
       websiteLink: "website link",
     },
   ];

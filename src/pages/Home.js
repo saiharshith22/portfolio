@@ -1,6 +1,5 @@
 import { Box, Button, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
-import HomeBanner from "../images/about-banner.png";
 import { TbDownload } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
 import { highlight } from "../components/utils";
@@ -125,7 +124,7 @@ const Home = () => {
         >
           <Box className="flex">
             <img
-              src={HomeBanner}
+              src="/static/images/about-banner.png"
               alt="home banner"
               className="w-full h-full max-w-[400px] max-h-[400px] md:max-w-[700px] md:max-h-[700px]"
             />
